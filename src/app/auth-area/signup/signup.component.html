@@ -1,42 +1,54 @@
 <body>   
     <div class="row justify-content-center">
         <h2 class="header">Sign Up</h2>
-        <form class="row pb-4">
+        <form class="row pb-4" [formGroup]="signUpForm" (ngSubmit)="signUp()">
             <div class="col-md-12 form_flex">
                 <div class="form-group ">
-                    <input class="form-control" type="text" placeholder="Enter First Name"  formControlName="firstName" minlength="3">
-                    <!--><div class="k-form-error" *ngIf="name.invalid && name.touched || name.dirty">
-                        <div *ngIf="name.hasError('required')">Name is required</div>
-                    </div><-->
+                    <input class="form-control" type="text" placeholder="Enter First Name"  formControlName="firstName" minlength="3"
+                            [ngClass]="{'form-error-border' : fname.invalid && (fname.touched || fname.dirty)}">
+                    <div class="form-error" *ngIf="fname.invalid && fname.touched || fname.dirty">
+                        <div *ngIf="fname.hasError('required')">First Name is required</div>
+                    </div>
                 </div>
 
                 <div class="form-group ">
-                    <input class="form-control" type="text" placeholder="Enter Last Name"  formControlName="lastName" minlength="3">
-                    <!--><div class="k-form-error" *ngIf="name.invalid && name.touched || name.dirty">
-                        <div *ngIf="name.hasError('required')">Name is required</div>
-                    </div><-->
+                    <input class="form-control" type="text" placeholder="Enter Last Name"  formControlName="lastName" minlength="3"
+                    [ngClass]="{'form-error-border' : lname.invalid && (lname.touched || lname.dirty)}">
+                    <div class="form-error" *ngIf="lname.invalid && lname.touched || lname.dirty">
+                        <div *ngIf="lname.hasError('required')">Last Name is required</div>
+                    </div>
                 </div>
 
                 <div class="form-group field_full">
-                    <input class="form-control" type="email" placeholder="Enter Email"  formControlName="email" minlength="3">
-                    <!--><div class="k-form-error" *ngIf="name.invalid && name.touched || name.dirty">
-                        <div *ngIf="name.hasError('required')">Name is required</div>
-                    </div><-->
+                    <input class="form-control" type="email" placeholder="Enter Email"  formControlName="email" minlength="3" 
+                            [ngClass]="{'form-error-border' : email.invalid && (email.touched || email.dirty)}">
+                    <div class="form-error" *ngIf="email.invalid && email.touched || email.dirty">
+                        <div *ngIf="email.hasError('required')">Email is required</div>
+                        <div *ngIf="email.hasError('email')">Wrong Email Format</div>
+                    </div>
                 </div>
 
                 <div class="form-group field_full">
-                    <input class="form-control" type="password" placeholder="Enter Password"  formControlName="password" minlength="3">
-                    <!--><div class="k-form-error" *ngIf="name.invalid && name.touched || name.dirty">
-                        <div *ngIf="name.hasError('required')">Name is required</div>
-                    </div><-->
+                    <input class="form-control" type="file"formControlName="img">
                 </div>
 
                 <div class="form-group field_full">
-                    <input class="form-control" type="password" placeholder="confirm Password"  formControlName="password" minlength="3">
-                    <!--><div class="k-form-error" *ngIf="name.invalid && name.touched || name.dirty">
-                        <div *ngIf="name.hasError('required')">Name is required</div>
-                    </div><-->
+                    <input class="form-control" type="password" placeholder="Enter Password"  formControlName="password" minlength="3"
+                            [ngClass]="{'form-error-border' : password.invalid && (password.touched || password.dirty)}">
+                    <div class="form-error" *ngIf="password.invalid && password.touched || password.dirty">
+                        <div *ngIf="password.hasError('required')">Password is required</div>
+                    </div>
                 </div>
+
+                <div class="form-group field_full">
+                    <input class="form-control" type="password" placeholder="confirm Password"  formControlName="confirmPassword" minlength="3"
+                            [ngClass]="{'form-error-border' : cpassword.invalid && (cpassword.touched || cpassword.dirty)}">
+                    <div class="form-error" *ngIf="cpassword.invalid && cpassword.touched || cpassword.dirty">
+                        <div *ngIf="cpassword.hasError('required')">Password is required</div>
+                    </div>
+                </div>
+
+                <p>Already have an account? <a routerLink="/auth-area/login">log in</a></p>
 
                 <div class="col-sm-12 mt-4 d-flex justify-content-end">
                     <button class="app_button btn primary_btn">

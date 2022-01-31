@@ -1,5 +1,5 @@
 .justify-content-center {
-    margin: 14% auto;
+    margin: 10% auto;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -7,6 +7,18 @@
     justify-content: center;
     z-index: 100;
     
+}
+
+p {
+    font-size: 1.4em;
+    color: whitesmoke;
+    margin-top: -2em;
+    margin-bottom: 2.7em;
+}
+
+a {
+    font-size: 1.4em;
+    color: whitesmoke;
 }
 
 body {
@@ -81,4 +93,29 @@ form .form-control::placeholder {
     color: black;
     background-color: whitesmoke;
     border: none;
+}
+
+
+.form-error-border.ng-touched.ng-invalid {
+    border-bottom: 2px solid red;
+    animation-duration: 2s;
+    animation-name: bounce;
+}
+
+.form-valid-border.ng-touched.ng-valid {
+    border-bottom: 2px bisque green;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);}
+}
+
+.form-error {
+    padding: 2px;
+    color: red;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-top: -1.4em;
 }
