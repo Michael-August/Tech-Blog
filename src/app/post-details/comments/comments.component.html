@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Comments <span>({{getNumberOfComments()}})</span></h3>
+                        <p>No insults please. Be kind with your words!.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="" alt="Profile pics of all those that commented">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="form-group card-title" (keyup.enter)="addNewComment(newComment.value)">
+                <Label>
+                    <img [src]="loggedInUser.img" alt="profile pics of logged in user" class="loggedUser">
+                    <img src="assets/img/remote.jpg" *ngIf="!loggedInUser.img" alt="profile pics of logged in user" class="loggedUser">
+                </Label>
+                <input type="text" #newComment name="" id="" placeholder="Add a Comment">
+            </div>
+            <div *ngFor="let comment of comments" class="comments-area d-flex">
+                <img [src]="comment?.profilePics" alt="" class="comment-img">
+                <img *ngIf="!comment.profilePics" src="assets/img/remote.jpg" alt="" class="comment-img">
+                <div class="write-ups">
+                    <p>{{comment?.userName}}</p>
+                    <p class="comment">{{ comment?.comment }}</p>
+                    <div class="misc d-flex">
+                        <p>Reply</p>
+                        <p>Share</p>
+                        <p>Likes <span>{{comment?.likes}}</span></p>
+                    </div>
+                    
+                    <div class="replies" *ngIf="comment?.replies">
+                        <p>{{comment?.replies.userName}}</p>
+                        <p class="comment">{{ comment?.replies.comment }}</p>
+                        <div class="misc d-flex">
+                            <p>Reply</p>
+                            <p>Share</p>
+                            <p>Likes <span>{{comment?.replies?.likes}}</span></p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+.main-nav {
+    position: fixed;
+    height: 10vh;
+    font-size: 2em;
+    color: #fff;
+    font-family: serif;
+    box-shadow: 0 10px 10px rgba(31, 30, 30, 0.7);
+    z-index: 100;
+}
+
+#menu li a {
+    position: relative;
+    transition: all ease-in 0.3s;
+    margin-right: 7px;
+}
+
+li a:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.active {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.active::before {
+    content: '';
+    background-color: #fff;
+    height: 30px;
+    width: 1px;
+    position: absolute;
+    display: flex;
+    margin-left: -10px;
+}
+
+.blog-logo {
+    color: #fff;
+    font-size: 2.07em;
+    font-family: serif;
+}
+
+.socialheader {
+    margin-left: 100px;
+}
+
+.profile {
+    clip-path: circle();
+    width: 5%;
+    margin-right: 0.1em;
+}
+
+.userProfile {
+    margin-left: 1.4em;
+    cursor: pointer;
+}
+
+.mt-5 {
+    align-items: center;
+    justify-content: center;
+}

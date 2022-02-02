@@ -1,15 +1,19 @@
-<nav class="main-nav overlay clearfix">
-	<a class="blog-logo" routerLink="./home">Blogust</a>
-	<ul id="menu">
-		<li class="nav-home nav-current" role="presentation"><a routerLink="./home">Home</a></li>
-		<li class="nav-article-example" role="presentation"><a href="article.html">Post Example</a></li>
-		<li class="nav-about-us" role="presentation"><a href="about.html">Page Example</a></li>
-		<li class="nav-author-page" role="presentation"><a href="author.html">Author Page</a></li>
-		<span class="socialheader">
-            <a href="#"><span class='symbol'>circletwitterbird</span></a>
-            <a href="#"><span class='symbol'>circlefacebook</span></a>
-            <a href="#"><span class='symbol'>circlegoogleplus</span></a>
-            <a href="mailto:wowthemesnet@gmail.com"><span class='symbol'>circleemail</span></a>
+<nav class="main-nav navbar bg-dark overlay clearfix">
+	<a class="blog-logo navbar-brand" routerLink="./home">Blogust</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<ul id="menu" class="">
+		<li class="nav-iem" role="presentation"><a class="nav-link" routerLink="./home" routerLinkActive="active"
+			[routerLinkActiveOptions]="{exact:true}">Home</a></li>
+		<li class="nav-iem" role="presentation"><a class="nav-link" routerLink="./home/all-post" routerLinkActive="active">All Posts</a></li>
+		<li class="nav-iem" role="presentation"><a class="nav-link" routerLink="./auth-area/signup" routerLinkActive="active" *ngIf="!isLoggedIn">Sign up</a></li>
+		<li class="nav-iem" role="presentation"><a class="nav-link" routerLink="./auth-area/login" routerLinkActive="active" *ngIf="!isLoggedIn">Log in</a></li>
+		<li class="nav-iem" role="presentation"><a class="nav-link" routerLinkActive="active" style="cursor: pointer" *ngIf="isLoggedIn" (click)="logOut()">Log out</a></li>
+		<span class="userProfile" *ngIf="isLoggedIn">
+			<img [src]="user?.img" class="profile" alt="">
+			<span class="mt-5"> {{user?.firstName}} {{user?.lastName}}</span>
 		</span>
 	</ul>
 </nav>

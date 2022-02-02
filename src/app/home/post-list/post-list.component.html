@@ -1,5 +1,7 @@
 <main id="content" class="content" role="main">
     <div class="wraps">
-        <app-each-post></app-each-post>
+        <app-each-post [postThumbnail] = "posts"></app-each-post>
     </div>
+
+    <a class="btn btn-lg btn-block btn-outline-secondary" routerLink="./all-post" >View All Post &#8594;</a>
 </main>

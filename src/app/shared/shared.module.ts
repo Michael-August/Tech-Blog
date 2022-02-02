@@ -1,18 +1,22 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { EachPostComponent } from "./components/each-post/each-post.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { UserProfileComponent } from "./components/user-profile/user-profile.component";
+// import { EachPostComponent } from "./components/each-post/each-post.component";
 
 @NgModule({
     declarations: [
-        EachPostComponent
+        UserProfileComponent
     ],
 
     imports: [
-        CommonModule
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
 
     exports: [
-        EachPostComponent
+        UserProfileComponent
     ],
 
     providers: [

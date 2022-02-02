@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Productivity as remote developer in 2022",
+      "body": "I'm not sure what part of the quickstart (https://github.com/angular/angularfire) I missed. Although I do not use the Async pipe in the ..",
+      "author": "Michael August",
+      "date": "March 13, 2020",
+      "category": "learning",
+      "img": "../assets/img/post1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Productivity as remote developer in 2022",
+      "body": "I'm not sure what part of the quickstart (https://github.com/angular/angularfire) I missed. Although I do not use the Async pipe in the ..",
+      "author": "Michael August",
+      "date": "April 18, 2020",
+      "category": "learning",
+      "img": "assets/img/post2pro.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Productivity as remote developer in 2022",
+      "body": "I'm not sure what part of the quickstart (https://github.com/angular/angularfire) I missed. Although I do not use the Async pipe in the ..",
+      "author": "Michael August",
+      "date": "January 27, 2022",
+      "category": "learning",
+      "img": "assets/img/post3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Productivity as remote developer in 2022",
+      "body": "I'm not sure what part of the quickstart (https://github.com/angular/angularfire) I missed. Although I do not use the Async pipe in the ..",
+      "author": "Michael August",
+      "date": "February 12, 2021",
+      "category": "learning",
+      "img": "assets/img/post4.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Productivity as remote developer in 2022",
+      "body": "I'm not sure what part of the quickstart (https://github.com/angular/angularfire) I missed. Although I do not use the Async pipe in the ..",
+      "author": "Michael August",
+      "date": "March 23, 2021",
+      "category": "learning",
+      "img": "assets/img/post5.jpg"
+    }
+  ],
+  "comments": [
+    
+  ],
+  "users": [
+    {
+      "firstName": "Michael",
+      "lastName": "August",
+      "email": "michael@gmail.com",
+      "img": "assets/img/gravatar.jpg",
+      "password": "12347890",
+      "confirmPassword": "12347890",
+      "id": 1
+    }
+  ]
+}

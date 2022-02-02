@@ -1,0 +1,17 @@
+.post {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-left: 7em;
+    margin-right: 7em;
+    line-height: 2em;
+    opacity: 0.8;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 1.4em;
+}
