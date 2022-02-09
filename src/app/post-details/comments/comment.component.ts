@@ -17,17 +17,21 @@ import { PostService } from "../../shared/services/post.services";
         .misc p { font-size: 14px; color: gray; margin-right: 10px; cursor: pointer; }
         .card-body { width: 100%; }
         .replies { margin-left: 20px; }
+
     `]
 })
 
 export class CommentComponent implements OnInit{
 
+    @Input() comments: Array<IComments> = []
+    @Output() newComment = new EventEmitter()
+    @Output() like = new EventEmitter()
+    @ViewChild('newComment') commentForm: ElementRef
+
     singlePost: IPostDetail = null
     loggedInUser: IUser = null
 
-    @Input() comments: Array<IComments> = []
-    @Output() newComment = new EventEmitter()
-    @ViewChild('newComment') commentForm: ElementRef
+    // getAComment = this.comments.find(i => {return i.id})
 
     constructor(private postSrv: PostService, private route: ActivatedRoute, private authSrv: AuthAreaService) {  }
 
@@ -37,6 +41,31 @@ export class CommentComponent implements OnInit{
             this.singlePost = res
         })
         this.getLoggedInUser()
+    }
+    
+
+    likeFunc(id: number) {
+        let getAComment = this.comments.find(i => {return i.id === id})
+        console.log('id:', id, 'comment:', getAComment.id)
+        if(getAComment.likes) {
+            let index = getAComment.likes.indexOf(this.loggedInUser.email)
+            if(index === -1) {
+                getAComment.likes.push(this.loggedInUser.email)
+                getAComment.liked = true
+            } else {
+                getAComment.likes.splice(index, 1)
+                getAComment.liked = false
+            }
+            console.log(getAComment.likes)
+        } else {
+            getAComment.likes = [this.loggedInUser.email]
+            console.log(getAComment.likes)
+            getAComment.liked = true
+        }
+    }
+
+    clickLike(commentId) {
+        this.like.emit(this.likeFunc(commentId))
     }
 
     getLoggedInUser() {
@@ -62,7 +91,7 @@ export class CommentComponent implements OnInit{
         this.newComment.emit(comment)
     }
 
-    getNumberOfComments(){
+    getNumberOfComments() {
         return this.comments?.length
     }
 }

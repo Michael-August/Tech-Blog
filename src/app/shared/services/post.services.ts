@@ -27,6 +27,10 @@ export class PostService {
         return this.http.get<Array<IComments[]>>(`http://localhost:3000/comments/`)
     }
 
+    getCommentsById(id): Observable<Array<IComments[]>> {
+        return this.http.get<Array<IComments[]>>(`http://localhost:3000/comments/${id}`)
+    }
+
     createComments(comment) {
         return this.http.post('http://localhost:3000/comments', comment)
     }

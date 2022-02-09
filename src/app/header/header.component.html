@@ -13,7 +13,7 @@
 		<li class="nav-iem" role="presentation"><a class="nav-link" routerLinkActive="active" style="cursor: pointer" *ngIf="isLoggedIn" (click)="logOut()">Log out</a></li>
 		<span class="userProfile" *ngIf="isLoggedIn">
 			<img [src]="user?.img" class="profile" alt="">
-			<span class="mt-5"> {{user?.firstName}} {{user?.lastName}}</span>
+			<span class="mt-5 user"> {{user?.firstName}} {{user?.lastName}}</span>
 		</span>
 	</ul>
 </nav>

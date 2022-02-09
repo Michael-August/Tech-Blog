@@ -43,10 +43,8 @@ export class PostBodyComponent implements OnInit {
         this.postDetail.comments = [...this.postComment]
         console.log(this.postDetail.comments)
       }
-      })
+    })
   }
-
-    
 
   addComment(newComment) {
     this.postService.createComments(newComment).subscribe(res => {
@@ -54,7 +52,12 @@ export class PostBodyComponent implements OnInit {
       this.attarchCommentToPost()
       this.commentComponent.commentForm.nativeElement.value = ''
     })
+  }
+
+  likeFunc(id) {
+    this.postService.getCommentsById(id).subscribe(res => {
       
+    })
   }
 
 }

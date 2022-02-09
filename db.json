@@ -47,7 +47,41 @@
     }
   ],
   "comments": [
-    
+    {
+      "postId": 7,
+      "userName": "Rashford Chryso",
+      "comment": "Cool",
+      "profilePics": "",
+      "id": 1
+    },
+    {
+      "postId": 7,
+      "userName": "Michael August",
+      "comment": "Hey Rashford!",
+      "profilePics": "assets/img/gravatar.jpg",
+      "id": 2
+    },
+    {
+      "postId": 3,
+      "userName": "Michael August",
+      "comment": "Some of the post are misbehaving",
+      "profilePics": "assets/img/gravatar.jpg",
+      "id": 3
+    },
+    {
+      "postId": 7,
+      "userName": "Michael August",
+      "comment": "Another Comment",
+      "profilePics": "assets/img/gravatar.jpg",
+      "id": 4
+    },
+    {
+      "postId": 4,
+      "userName": "Michael August",
+      "comment": "Interesting",
+      "profilePics": "assets/img/gravatar.jpg",
+      "id": 5
+    }
   ],
   "users": [
     {
@@ -58,6 +92,15 @@
       "password": "12347890",
       "confirmPassword": "12347890",
       "id": 1
+    },
+    {
+      "firstName": "Rashford",
+      "lastName": "Chryso",
+      "email": "chrysorash@gmail",
+      "img": "",
+      "password": "12347890",
+      "confirmPassword": "12347890",
+      "id": 2
     }
   ]
 }

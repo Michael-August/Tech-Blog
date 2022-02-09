@@ -33,7 +33,7 @@
                 </section>
             </footer>
         </article>
-        <comment [comments]="postDetail?.comments" (newComment)="addComment($event)"></comment>
+        <comment [comments]="postDetail?.comments" (newComment)="addComment($event)" (like)="likeFunc($event)"></comment>
     </div>
 </main>
 

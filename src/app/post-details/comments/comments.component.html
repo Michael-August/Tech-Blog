@@ -30,7 +30,7 @@
                     <div class="misc d-flex">
                         <p>Reply</p>
                         <p>Share</p>
-                        <p>Likes <span>{{comment?.likes}}</span></p>
+                        <p (click)="clickLike(comment?.id)" [ngStyle]="{'color': comment?.liked ? 'blue' : 'gray' }">Likes <span>1</span></p>
                     </div>
                     
                     <div class="replies" *ngIf="comment?.replies">

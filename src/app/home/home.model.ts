@@ -10,10 +10,12 @@ export interface IPostDetail {
 }
 
 export interface IComments {
+    id?: number;
     postId?: number
     userName?: string;
-    comment: string;
-    likes?: number;
+    comment?: string;
+    likes?: string[];
+    liked?: boolean;
     profilePics?: string;
     replies?: IReply;
 }
@@ -21,6 +23,6 @@ export interface IComments {
 export interface IReply {
     userName?: string;
     comment: string;
-    likes?: number;
+    likes?: string[];
     profilePics?: string;
 }
