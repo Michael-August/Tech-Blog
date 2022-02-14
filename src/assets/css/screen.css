@@ -1030,11 +1030,11 @@ body:not(.post-template) .post-title {
 .site-wrapper {
 	background-color:#f7faf9;
 }
-.sidebar {
+/* .sidebar {
 	width:25%;
 	float:right;
 	margin-right:3%;
-}
+} */
 .widget {
 	padding:30px;
 	background:#f7faf9;

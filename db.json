@@ -90,6 +90,7 @@
       "email": "michael@gmail.com",
       "img": "assets/img/gravatar.jpg",
       "password": "12347890",
+      "role": "Member",
       "confirmPassword": "12347890",
       "id": 1
     },
@@ -99,8 +100,19 @@
       "email": "chrysorash@gmail",
       "img": "",
       "password": "12347890",
+      "role": "Member",
       "confirmPassword": "12347890",
       "id": 2
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "August",
+      "email": "august@gmail",
+      "img": "assets/img/remote.jpg",
+      "password": "12347890",
+      "role": "Admin",
+      "confirmPassword": "12347890",
+      "id": 3
     }
   ]
 }

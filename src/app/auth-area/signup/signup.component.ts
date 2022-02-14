@@ -11,7 +11,7 @@ import { AuthAreaService } from 'src/app/shared/services/auth-area.service';
 export class SignupComponent implements OnInit {
 
   public signUpForm: FormGroup
-
+  
   constructor(private authServ: AuthAreaService, private route: Router) { }
 
   ngOnInit(): void {
@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       img: new FormControl(''),
+      role: new FormControl('Member'),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)])
     })
@@ -45,7 +46,7 @@ export class SignupComponent implements OnInit {
     return this.signUpForm.get('confirmPassword')
   }
 
-   private validateAllFormFields = (formGroup: FormGroup) => {         // {1}
+  private validateAllFormFields = (formGroup: FormGroup) => {         // {1}
     Object.keys(formGroup.controls).forEach(field => {  // {2}
       const control = formGroup.get(field);             // {3}
       if (control instanceof FormControl) {             // {4}

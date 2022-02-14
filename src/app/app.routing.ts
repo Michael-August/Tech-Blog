@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AdminIndexComponent } from "./admin/admin-index/admin-index.component";
 import { FourOFourComponent } from "./shared/components/404.component";
 
 const mainRoute:Routes = [
@@ -12,6 +13,13 @@ const mainRoute:Routes = [
     },
     {
         path: 'auth-area', loadChildren: () => import('./auth-area/auth-area.module').then(mod => mod.AuthAreaModule)
+    },
+    {
+        path: 'admin-area',
+        component: AdminIndexComponent,
+        children: [
+            { path: 'admin', loadChildren: () => import('./admin/admin.module').then(mod => mod.AdminModule) }
+        ]
     },
 
     { path: 'not-found', component: FourOFourComponent },

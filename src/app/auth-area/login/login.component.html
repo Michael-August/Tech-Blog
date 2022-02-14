@@ -7,7 +7,7 @@
                     <input class="form-control" type="email" placeholder="Enter Email"  formControlName="email" minlength="3"
                         [ngClass]="{'form-error-border' : email.invalid && (email.touched || email.dirty)}">
                     <div class="form-error" *ngIf="email.invalid && (email.touched || email.dirty)">
-                        <div *ngIf="password.hasError('required')">Email is required</div>
+                        <div *ngIf="email.hasError('required')">Email is required</div>
                         <div *ngIf="email.hasError('email')">Wrong Email Format</div>
                     </div>
                 </div>

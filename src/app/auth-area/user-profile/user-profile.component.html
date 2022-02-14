@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="link">
+        <h2>Profile</h2>
+        <span class="path">Home/ <span class="follow">Users/ <span class="last">Profile</span></span></span>
+    </div>
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                    <img [src]="loggedInUser.img" alt="Profile" class="rounded-circle">
+                    <h2>{{loggedInUser.firstName}} {{loggedInUser.lastName}}</h2>
+                    <p>{{loggedInUser.email}}</p>
+                    <div class="social-links mt-2">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="tabs">
+                        <ul class="tab-items">
+                            <li class="tab-item" (click)="setTab('OVERVIEW')" [ngClass]="{'active': tabState.active && tabState.active_tab === 'OVERVIEW'}">Overview</li>
+                            <li class="tab-item" (click)="setTab('PROFILE')" [ngClass]="{'active': tabState.active && tabState.active_tab === 'PROFILE'}">Edit Profile</li>
+                            <li class="tab-item" (click)="setTab('SETTINGS')" [ngClass]="{'active': tabState.active && tabState.active_tab === 'SETTINGS'}">Settings</li>
+                            <li class="tab-item" (click)="setTab('PASSWORD')" [ngClass]="{'active': tabState.active && tabState.active_tab === 'PASSWORD'}">Change Password</li>
+                        </ul>
+                    </div>
+
+                    <ng-template [ngIf]="tabState.active_tab === 'OVERVIEW'">
+                        <div class="header">
+                            <h2>Profile Details</h2>
+                        </div>
+
+                        <div class="detail">
+                            <div class="list-group">
+                                <div class="list-group-item d-flex justify-content-between">
+                                    <b>First Name</b>
+                                    <span>{{loggedInUser.firstName}}</span>
+                                </div>
+        
+                                <div class="list-group-item d-flex justify-content-between">
+                                    <b>Last Name</b>
+                                    <span>{{loggedInUser.lastName}}</span>
+                                </div>
+
+                                <div class="list-group-item d-flex justify-content-between">
+                                    <b>Email</b>
+                                    <span>{{loggedInUser.email}}</span>
+                                </div>
+
+                                <div class="list-group-item d-flex justify-content-between">
+                                    <b>Role</b>
+                                    <span>{{loggedInUser.role}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template [ngIf]="tabState.active_tab === 'PROFILE'">
+                        <div class="edit">
+                            <form [formGroup]="editForm">
+                                <img [src]="loggedInUser.img" alt="profile pics" class="pimg">
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Profile Image</label>
+                                  <input type="file" formControlName="img" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">First Name</label>
+                                  <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Last Name</label>
+                                  <input type="text" formControlName="lastName" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Email</label>
+                                  <input type="email" formControlName="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Role</label>
+                                  <input type="text" formControlName="role" readonly class="form-control" id="exampleInputPassword1" [placeholder]="loggedInUser.role">
+                                </div>
+
+                                <button (click)="submit()" type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

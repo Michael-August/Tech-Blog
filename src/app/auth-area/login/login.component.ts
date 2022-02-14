@@ -39,7 +39,12 @@ export class LoginComponent implements OnInit {
       if(this.userExist){
         this.authSrv.writeToLocalStorage(this.logInForm.value)
         console.log(this.logInForm.value)
-        this.router.navigate(['home/all-post'])
+        if(this.userExist.role === 'Member') {
+          this.router.navigate(['home/all-post'])
+        } else {
+          this.router.navigate(['/admin-area/admin/dashboard'])
+        }
+        
       } else {
         alert("user doesn't exist")
         this.router.navigate(['auth-area/signup'])

@@ -29,6 +29,11 @@
                 </div>
 
                 <div class="form-group field_full">
+                    <input class="form-control" type="text" placeholder="Role" readonly formControlName="role" minlength="3" 
+                            [ngClass]="{'form-error-border' : email.invalid && (email.touched || email.dirty)}">
+                </div>
+
+                <div class="form-group field_full">
                     <input class="form-control" type="file"formControlName="img">
                 </div>
 

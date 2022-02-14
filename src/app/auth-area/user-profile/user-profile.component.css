@@ -1,0 +1,98 @@
+.container {
+    margin-top: 7%;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.tab-items {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.tab-item {
+    font-size: 17px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all ease-in 0.3s;
+}
+
+.active {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+    transform: scale(1.1);
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    top: 33%;
+    left: 7%;
+    background: rgba(0, 0, 0, 0.2);
+    height: 2px;
+    width: 20%;
+}
+
+.tab-item:hover {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+    transform: scale(1.1);
+}
+
+.card {
+    border: none;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.col-md-8 {
+    margin-bottom: 40px;
+}
+
+.header {
+    margin: 30px 0;
+}
+
+.path {
+    opacity: 0.7;
+}
+
+.last {
+    opacity: 1;
+    font-weight: 500;
+}
+
+.rounded-circle {
+    width: 50%;
+}
+
+p, b, span {
+    font-size: 14px;
+}
+
+.edit {
+    font-size: 16px;
+    margin-left: 20%;
+}
+
+form {
+    width: 70%;
+}
+
+.form-control {
+    font-size: 14px;
+    padding: 20px;
+}
+
+.pimg {
+    width: 30%;
+}
+
+.btn {
+    font-size: 14px;
+}

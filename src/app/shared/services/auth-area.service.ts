@@ -17,8 +17,16 @@ export class AuthAreaService {
     return this.http.post<Array<IUser[]>>('http://localhost:3000/users', user)
   }
 
+  updateUser(user): Observable<Array<IUser[]>> {
+    return this.http.put<Array<IUser[]>>('http://localhost:3000/users', user)
+  }
+
   getSignedUpUsers(): Observable<Array<IUser>> {
     return this.http.get<Array<IUser>>('http://localhost:3000/users')
+  }
+
+  getUsersById(id): Observable<Array<IUser>> {
+    return this.http.get<Array<IUser>>(`http://localhost:3000/users/${id}`)
   }
 
   writeToLocalStorage(logInForm) {
