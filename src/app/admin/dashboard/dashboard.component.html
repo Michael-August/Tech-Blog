@@ -1,1 +1,34 @@
-<p>dashboard works!</p>
+<div class="dashboard-info container">
+    <div class="row">
+        <div class="col-md-9">
+            <header class="header">
+                <div class="row">
+                    <div class="col-md-6 header-text">
+                        <h3>Welcome back <span>{{ user.firstName}}</span></h3>
+                        <p style="font-size: 10px;">Your last log in was 7:17pm 09 Jan, 2022</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="assets/img/Dashboard-pana.svg" alt="" class="img">
+                    </div>
+                </div>
+                
+            </header>
+        </div>
+
+        <div class="col-md-3">
+            <div class="user">
+                <img [src]="user.img" alt="" class="img-thumbnail" style="margin-bottom: 10px;">
+                <h4>{{user.firstName}} {{user.lastName}}</h4>
+                <p>{{user.role}}</p>
+            </div>
+
+            <div class="cal">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Odio, quo omnis quaerat reiciendis doloribus voluptatum recusandae? \
+                    Natus ea sequi reiciendis.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
