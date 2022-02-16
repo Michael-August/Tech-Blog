@@ -17,6 +17,7 @@ const mainRoute:Routes = [
     {
         path: 'admin-area',
         component: AdminIndexComponent,
+        canActivate: [],
         children: [
             { path: 'admin', loadChildren: () => import('./admin/admin.module').then(mod => mod.AdminModule) }
         ]

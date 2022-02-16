@@ -7,9 +7,14 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { AdminPostsComponent } from './admin-posts/admin-posts.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminCommentsComponent } from './admin-comments/admin-comments.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QuillEditorComponent } from 'ngx-quill';
 
 const adminRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'posts', component: AdminPostsComponent },
+  { path: 'users', component: AdminUsersComponent },
+  { path: 'comments', component: AdminCommentsComponent },
 ]
 
 @NgModule({
@@ -23,7 +28,9 @@ const adminRoutes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(adminRoutes)
+    RouterModule.forChild(adminRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
