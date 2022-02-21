@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { closeAsyncLoader, showAsyncLoader } from "src/app/shared/utils/helper";
 import { PostService } from "../../shared/services/post.services";
 import { IPostDetail } from "../home.model";
 
@@ -29,6 +30,7 @@ export class AllPostComponent implements OnInit {
     }
     
     getAllPosts(){
+        showAsyncLoader('Processing, please wait...')
         this.postsService.getPosts().subscribe(res => {
           console.log(res)
           this.posts = res as any
@@ -36,6 +38,6 @@ export class AllPostComponent implements OnInit {
             let pa: any = new Date(a.date), pb: any = new Date(b.date)
             return pb - pa
           })
-        })
+        }).add(closeAsyncLoader())
     }
 }

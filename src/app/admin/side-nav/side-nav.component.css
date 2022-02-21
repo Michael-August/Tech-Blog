@@ -8,5 +8,16 @@
     color: white;
     margin-bottom: 30px;
     font-size: 14px;
+    transition: all 0.1s ;
+}
+
+.nav-item:hover a {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.active {
+    color: #007bff;
+    transform: scale(1.1);
 }
 

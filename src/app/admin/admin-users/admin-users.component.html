@@ -1,1 +1,93 @@
-<p>admin-users works!</p>
+<div class="container">
+    <div class="header">
+      <div>
+        <h2>Users</h2>
+        <p>admin-area/admin/posts</p>
+      </div>
+      <button type="button" (click)="createUser()" class="btn btn-primary create-btn" data-toggle="modal" data-target="#exampleModal">Create Post</button>
+    </div>
+    <select name="" id="dropdown">
+      <option value="">--Select Category--</option>
+      <option value=""></option>
+    </select>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col">Status</th>
+          <th scope="col">Config</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{user.lastName}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+          <!--<td>{{user.status}}</td>-->
+          <td class="d-flex">
+            <button type="button" (click)="editUser(user.id)" class="btn btn-warning create-btn" data-toggle="modal" data-target="#exampleModal">Edit</button>
+            <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+  
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" *ngIf="isCreate">Create User</h5>
+            <h5 class="modal-title" id="exampleModalLabel" *ngIf="!isCreate">Update User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+    
+            <div class="modal-body" *ngFor="let user of users">
+                <form [formGroup]="userForm" (ngSubmit)="submit()">
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">User Last Name</label>
+                    <input type="text" class="form-control" formControlName="lastName" aria-describedby="emailHelp" placeholder="Enter User Last Name">
+                    </div>
+        
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">User First Name</label>
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="Enter User First Name">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">Profile Pics</label>
+                    <input type="file" class="form-control" formControlName="img">
+                    </div>
+        
+                    <div class="form-group">
+                    <label for="exampleFormControlSelect1">User Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">User Role</label>
+                        <select class="form-control" formControlName="role" id="exampleFormControlSelect1">
+                        <option value="">--Select role--</option>
+                        <option></option>
+                        </select>
+                    </div>
+  
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+  

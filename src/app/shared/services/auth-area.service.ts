@@ -29,6 +29,10 @@ export class AuthAreaService {
     return this.http.get<Array<IUser>>(`http://localhost:3000/users/${id}`)
   }
 
+  deleteUser(id: number) {
+    
+  }
+
   writeToLocalStorage(logInForm) {
     localStorage.setItem('logedIn', JSON.stringify(logInForm))
   }

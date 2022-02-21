@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthAreaService } from 'src/app/shared/services/auth-area.service';
+import { SWEET_ALERT, topEndAlert } from 'src/app/shared/utils/helper';
 
 @Component({
   selector: 'app-signup',
@@ -62,13 +63,13 @@ export class SignupComponent implements OnInit {
       return this.validateAllFormFields(this.signUpForm)
     }
     // checking password
-    if(this.signUpForm.get('password').value !== this.signUpForm.get('confirmPassword').value) {
-      alert("Password doesn't Match")
-      return;
-    }
+    // if(this.signUpForm.get('password').value !== this.signUpForm.get('confirmPassword').value) {
+    //   SWEET_ALERT('Error', "Password doesn't match", 'error', 'error', 'ok', false, undefined, undefined)
+    //   return;
+    // }
      
     this.authServ.signUpUser(this.signUpForm.value).subscribe(() => {
-      alert(`New User ${this.signUpForm.get('firstName').value} is created successfully`)
+      topEndAlert('top-end', `New User ${this.signUpForm.get('firstName').value} is created successfully`, 'success')
       this.signUpForm.reset()
       this.route.navigate(['auth-area/login'])
     })

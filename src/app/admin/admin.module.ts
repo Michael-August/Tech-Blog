@@ -8,7 +8,7 @@ import { AdminPostsComponent } from './admin-posts/admin-posts.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminCommentsComponent } from './admin-comments/admin-comments.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { QuillEditorComponent } from 'ngx-quill';
+import { QuillModule } from 'ngx-quill';
 
 const adminRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -30,7 +30,8 @@ const adminRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(adminRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuillModule
   ]
 })
 export class AdminModule { }

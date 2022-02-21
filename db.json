@@ -113,6 +113,22 @@
       "role": "Admin",
       "confirmPassword": "12347890",
       "id": 3
+    },
+    {
+      "lastName": "Kenny",
+      "firstName": "Levi",
+      "img": null,
+      "email": "keny@gmail.com",
+      "role": null,
+      "id": 7
+    },
+    {
+      "lastName": "New user",
+      "firstName": "Added",
+      "img": null,
+      "email": "added@gmail.com",
+      "role": null,
+      "id": 8
     }
   ]
 }

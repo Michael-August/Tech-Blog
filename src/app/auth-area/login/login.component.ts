@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthAreaService } from 'src/app/shared/services/auth-area.service';
+import { SWEET_ALERT, topEndAlert } from 'src/app/shared/utils/helper';
 import { IUser } from '../auth-area.model';
 
 @Component({
@@ -43,11 +44,12 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['home/all-post'])
         } else {
           this.router.navigate(['/admin-area/admin/dashboard'])
+          topEndAlert('top-end', `User ${this.userExist.firstName} logged in successfully`, 'success')
         }
-        
+
       } else {
-        alert("user doesn't exist")
-        this.router.navigate(['auth-area/signup'])
+        SWEET_ALERT('Error', `email or password not correct`, 'error', 'error', 'ok', false, undefined, undefined)
+        // this.router.navigate(['auth-area/signup'])
       }
     })
   }

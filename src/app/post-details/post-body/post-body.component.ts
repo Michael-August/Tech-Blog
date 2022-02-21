@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/shared/services/post.services';
+import { closeAsyncLoader, showAsyncLoader } from 'src/app/shared/utils/helper';
 import { IComments, IPostDetail } from '../../home/home.model';
 import { CommentComponent } from '../comments/comment.component';
 
@@ -19,12 +20,13 @@ export class PostBodyComponent implements OnInit {
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    showAsyncLoader('Processing, please wait...')
     this.postService.getPostById(this.route.snapshot.params['id']).subscribe(res => {
       this.postDetail = res
       console.log(this.postDetail.comments)
 
       this.attarchCommentToPost()
-    })
+    }).add(closeAsyncLoader())
   }
 
   attarchCommentToPost() {

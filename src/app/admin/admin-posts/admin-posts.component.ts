@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IPostDetail } from 'src/app/home/home.model';
 import { PostService } from 'src/app/shared/services/post.services';
+import { closeAsyncLoader, showAsyncLoader } from 'src/app/shared/utils/helper';
 
 @Component({
   selector: 'app-admin-posts',
@@ -42,8 +43,20 @@ export class AdminPostsComponent implements OnInit {
   }
 
   getPosts() {
+    showAsyncLoader('Processing, please wait...')
     this.postSrv.getPosts().subscribe(res => {
       this.posts = res as any
+    }).add(closeAsyncLoader())
+  }
+
+  createPost() {
+    this.postForm.reset()
+  }
+
+  editPost(id) {
+    this.isCreate = false
+    this.postSrv.getPostById(id).subscribe(res => {
+      this.postForm.patchValue(res)
     })
   }
 

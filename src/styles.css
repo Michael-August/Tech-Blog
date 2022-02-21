@@ -5,3 +5,59 @@ body {
 a:hover {
     text-decoration: none;
 }
+
+.table {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.header {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.create-btn {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#dropdown {
+    margin: 20px 0;
+    float: right;
+    font-size: 14px;
+    padding: 4px;
+    border: none;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header h5 {
+    font-size: 20px;
+}
+
+.modal-header > button > span {
+    font-size: 20px;
+}
+
+label, input {
+    font-size: 14px;
+}
+
+.form-control {
+    font-size: 14px;
+    padding: 20px;
+}
+
+.btn {
+    font-size: 14px;
+    border: none;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* quill editor */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+@import '~quill-emoji/dist/quill-emoji.css';
+@import '~quill-mention/dist/quill.mention.min.css'

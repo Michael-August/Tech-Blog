@@ -50,6 +50,7 @@ body::after {
     font-size: 2.7em;
     margin-bottom: 1em;
     color: #fff;
+    background: transparent;
     z-index: 100;
 }
 
