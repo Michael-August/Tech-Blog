@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AdminIndexComponent } from "./admin/admin-index/admin-index.component";
 import { FourOFourComponent } from "./shared/components/404.component";
+import { AdminGuard } from "./shared/guards/admin-guard.guard";
 
 const mainRoute:Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +18,6 @@ const mainRoute:Routes = [
     {
         path: 'admin-area',
         component: AdminIndexComponent,
-        canActivate: [],
         children: [
             { path: 'admin', loadChildren: () => import('./admin/admin.module').then(mod => mod.AdminModule) }
         ]

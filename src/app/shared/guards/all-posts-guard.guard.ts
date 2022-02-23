@@ -10,7 +10,7 @@ export class AllPostsGuard implements CanActivate {
   constructor(private router: Router) {
 
   }
-
+  
   canActivate() {
     if (localStorage.length) {
       return true

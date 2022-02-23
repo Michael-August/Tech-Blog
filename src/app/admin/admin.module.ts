@@ -9,12 +9,13 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminCommentsComponent } from './admin-comments/admin-comments.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
+import { AdminGuard } from '../shared/guards/admin-guard.guard';
 
 const adminRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'posts', component: AdminPostsComponent },
-  { path: 'users', component: AdminUsersComponent },
-  { path: 'comments', component: AdminCommentsComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
+  { path: 'posts', component: AdminPostsComponent, canActivate: [AdminGuard], },
+  { path: 'users', component: AdminUsersComponent, canActivate: [AdminGuard], },
+  { path: 'comments', component: AdminCommentsComponent, canActivate: [AdminGuard] },
 ]
 
 @NgModule({

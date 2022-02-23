@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { IUser } from 'src/app/auth-area/auth-area.model';
 import { AuthAreaService } from 'src/app/shared/services/auth-area.service';
 import { closeAsyncLoader, showAsyncLoader, topEndAlert } from 'src/app/shared/utils/helper';
@@ -13,7 +14,7 @@ import Swal,  {  } from 'sweetalert2'
 export class AdminUsersComponent implements OnInit {
 
   userForm: FormGroup
-  users: IUser[] = []
+  users$: Observable<IUser[]>
   isCreate: boolean = true
 
   constructor(private auth: AuthAreaService) { }
@@ -31,10 +32,8 @@ export class AdminUsersComponent implements OnInit {
   }
 
   getUsers() {
-    showAsyncLoader('Proccessing, please wait...')
-    this.auth.getSignedUpUsers().subscribe(res => {
-      this.users = res 
-    }).add(closeAsyncLoader())
+    // showAsyncLoader('Proccessing, please wait...')
+    this.users$ = this.auth.getSignedUpUsers()
   }
 
   createUser() {
